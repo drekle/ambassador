@@ -8,4 +8,8 @@ gazelle(
     name = "gazelle",
     external = "vendored",
     prefix = "github.com/datawire/ambassador",
+    extra_args = [
+        "-lang",
+        "proto",
+    ],
 )

@@ -75,6 +75,12 @@ ambassador-secrets-deployment.yaml
 *failures.txt
 *.swp
 
+# Bazel generation directories
+bazel-ambassador
+bazel-bin
+bazel-out
+bazel-testlogs
+
 # --- Files ignored by older versions ---
 # Remove the tail of this list when the commit making the change gets
 # far enough in to the past.
