@@ -1,0 +1,13 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["rate_limit.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/config/ratelimit/v2:v2_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:duration_proto",
+    ],
+)

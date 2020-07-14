@@ -1,0 +1,23 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = [
+        "ads.proto",
+        "hds.proto",
+        "rtds.proto",
+        "sds.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/annotations:annotations_proto",
+        "//envoy/api/v2:v2_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//envoy/api/v2/endpoint:endpoint_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@go_googleapis//google/api:annotations_proto",
+    ],
+)

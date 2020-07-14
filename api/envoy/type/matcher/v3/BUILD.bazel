@@ -1,0 +1,24 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v3_proto",
+    srcs = [
+        "metadata.proto",
+        "node.proto",
+        "number.proto",
+        "path.proto",
+        "regex.proto",
+        "string.proto",
+        "struct.proto",
+        "value.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/annotations:annotations_proto",
+        "//envoy/type/matcher/v3:v3_proto",
+        "//envoy/type/v3:v3_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

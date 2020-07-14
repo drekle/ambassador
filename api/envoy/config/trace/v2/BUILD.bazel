@@ -1,0 +1,17 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["trace.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/annotations:annotations_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//opencensus/proto/trace/v1:v1_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:any_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

@@ -1,0 +1,19 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v3_proto",
+    srcs = [
+        "common.proto",
+        "http.proto",
+        "transport.proto",
+        "wrapper.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/config/core/v3:v3_proto",
+        "//envoy/data/tap/v3:v3_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ],
+)

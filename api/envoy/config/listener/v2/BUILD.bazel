@@ -1,0 +1,11 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["api_listener.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//udpa/annotations:annotations_proto",
+        "@com_google_protobuf//:any_proto",
+    ],
+)

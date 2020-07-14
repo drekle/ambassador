@@ -1,0 +1,12 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["custom_tag.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/type/metadata/v2:v2_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+    ],
+)

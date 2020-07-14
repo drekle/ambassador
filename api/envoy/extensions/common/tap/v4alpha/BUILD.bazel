@@ -1,0 +1,13 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v4alpha_proto",
+    srcs = ["common.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/config/core/v4alpha:v4alpha_proto",
+        "//envoy/config/tap/v3:v3_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+    ],
+)

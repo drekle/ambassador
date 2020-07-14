@@ -1,0 +1,15 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["health_check.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/api/v2/route:route_proto",
+        "//envoy/type:type_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

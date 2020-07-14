@@ -1,0 +1,19 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v3_proto",
+    srcs = [
+        "dubbo_proxy.proto",
+        "route.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/config/route/v3:v3_proto",
+        "//envoy/extensions/filters/network/dubbo_proxy/v3:v3_proto",
+        "//envoy/type/matcher/v3:v3_proto",
+        "//envoy/type/v3:v3_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:any_proto",
+    ],
+)

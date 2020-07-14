@@ -1,0 +1,11 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v1alpha1_proto",
+    srcs = ["mysql_proxy.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+    ],
+)

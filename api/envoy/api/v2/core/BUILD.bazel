@@ -1,0 +1,32 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "core_proto",
+    srcs = [
+        "address.proto",
+        "backoff.proto",
+        "base.proto",
+        "config_source.proto",
+        "event_service_config.proto",
+        "grpc_method_list.proto",
+        "grpc_service.proto",
+        "health_check.proto",
+        "http_uri.proto",
+        "protocol.proto",
+        "socket_option.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/annotations:annotations_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//envoy/type:type_proto",
+        "//envoy/type/matcher:matcher_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:any_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:empty_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

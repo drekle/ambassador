@@ -1,0 +1,11 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["omit_host_metadata_config.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/api/v2/core:core_proto",
+        "//udpa/annotations:annotations_proto",
+    ],
+)

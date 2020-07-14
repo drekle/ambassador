@@ -1,0 +1,15 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["csds.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/admin/v2alpha:v2alpha_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//envoy/type/matcher:matcher_proto",
+        "//udpa/annotations:annotations_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@go_googleapis//google/api:annotations_proto",
+    ],
+)

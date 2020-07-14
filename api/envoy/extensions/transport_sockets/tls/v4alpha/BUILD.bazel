@@ -1,0 +1,17 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v4alpha_proto",
+    srcs = ["cert.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/config/core/v4alpha:v4alpha_proto",
+        "//envoy/type/matcher/v3:v3_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:any_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

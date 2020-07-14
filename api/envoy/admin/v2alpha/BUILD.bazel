@@ -1,0 +1,30 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2alpha_proto",
+    srcs = [
+        "certs.proto",
+        "clusters.proto",
+        "config_dump.proto",
+        "listeners.proto",
+        "memory.proto",
+        "metrics.proto",
+        "mutex_stats.proto",
+        "server_info.proto",
+        "tap.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/admin/v2alpha:v2alpha_proto",
+        "//envoy/annotations:annotations_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//envoy/config/bootstrap/v2:v2_proto",
+        "//envoy/service/tap/v2alpha:v2alpha_proto",
+        "//envoy/type:type_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:any_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:timestamp_proto",
+    ],
+)

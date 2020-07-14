@@ -1,0 +1,12 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2alpha_proto",
+    srcs = ["dynamic_forward_proxy.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/config/common/dynamic_forward_proxy/v2alpha:v2alpha_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+    ],
+)

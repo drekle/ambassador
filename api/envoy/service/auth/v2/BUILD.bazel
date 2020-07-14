@@ -1,0 +1,19 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = [
+        "attribute_context.proto",
+        "external_auth.proto",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/api/v2/core:core_proto",
+        "//envoy/service/auth/v2:v2_proto",
+        "//envoy/type:type_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:timestamp_proto",
+        "@go_googleapis//google/rpc:status_proto",
+    ],
+)

@@ -1,0 +1,13 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["metrics_service.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//:root_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+    ],
+)

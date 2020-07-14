@@ -1,0 +1,13 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2alpha_proto",
+    srcs = ["event_reporting_service.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/api/v2/core:core_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:any_proto",
+    ],
+)

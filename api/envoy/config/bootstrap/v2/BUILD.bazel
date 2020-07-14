@@ -1,0 +1,21 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "v2_proto",
+    srcs = ["bootstrap.proto"],
+    visibility = ["//visibility:public"],
+    deps = [
+        "//envoy/annotations:annotations_proto",
+        "//envoy/api/v2:v2_proto",
+        "//envoy/api/v2/auth:auth_proto",
+        "//envoy/api/v2/core:core_proto",
+        "//envoy/config/metrics/v2:v2_proto",
+        "//envoy/config/overload/v2alpha:v2alpha_proto",
+        "//envoy/config/trace/v2:v2_proto",
+        "//udpa/annotations:annotations_proto",
+        "//validate:validate_proto",
+        "@com_google_protobuf//:duration_proto",
+        "@com_google_protobuf//:struct_proto",
+        "@com_google_protobuf//:wrappers_proto",
+    ],
+)

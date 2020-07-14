@@ -1,0 +1,8 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+
+proto_library(
+    name = "ratelimit_proto",
+    srcs = ["rls.proto"],
+    visibility = ["//visibility:public"],
+    deps = ["//envoy/service/ratelimit/v2:v2_proto"],
+)
